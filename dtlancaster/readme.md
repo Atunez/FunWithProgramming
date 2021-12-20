@@ -1,1 +1,1 @@
-You Ass M8
+ruthless programmers only
