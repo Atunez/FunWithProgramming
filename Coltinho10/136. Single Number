@@ -1,0 +1,19 @@
+import java.util.HashMap;
+
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashMap<Integer, Integer> hash = new HashMap<>();
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (!hash.containsKey(nums[i])) {
+                hash.put(nums[i], 1);
+                result += nums[i];
+            }
+            else if (hash.containsKey(nums[i])) {
+                hash.remove(nums[i]);
+                result -= nums[i];
+            }
+        }
+        return result;
+    }
+}
