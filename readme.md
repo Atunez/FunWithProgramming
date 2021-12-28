@@ -1,7 +1,7 @@
 Why are we here? Just to Suffer?
 
 
-Abdel putting some lass readme's smfh
+Abdel putting some lame readme's smfh
 
 
 SAD!
