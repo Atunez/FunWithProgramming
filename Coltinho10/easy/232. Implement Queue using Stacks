@@ -1,0 +1,95 @@
+class MyQueue {
+    Stack<Integer> stack;
+    Stack<Integer> aux;
+    public MyQueue() {
+        stack = new Stack();
+        aux = new Stack();
+    }
+    
+    public void push(int x) {
+        stack.push(x);
+    }
+    
+    public int pop() {
+        while (!stack.isEmpty()) {
+            aux.push(stack.pop());
+        }
+        int pop = aux.pop();
+        while (!aux.isEmpty()) {
+            stack.push(aux.pop());
+        }
+        return pop;
+    }
+    
+    public int peek() {
+        while (!stack.isEmpty()) {
+            aux.push(stack.pop());
+        }
+        int peek = aux.peek();
+        while (!aux.isEmpty()) {
+            stack.push(aux.pop());
+        }
+        return peek;
+    }
+    
+    public boolean empty() {
+        return stack.isEmpty() && aux.isEmpty();
+    }
+}
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue obj = new MyQueue();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.peek();
+ * boolean param_4 = obj.empty();
+ */
+
+
+////////////////////////////////////////////
+
+class MyQueue {
+    
+    Stack<Integer> stack;
+    Stack<Integer> aux;
+    int front;
+    public MyQueue() {
+        stack = new Stack<>();
+        aux = new Stack<>();
+    }
+    
+    public void push(int x) {
+        if (stack.isEmpty()) front = x;
+        stack.push(x);
+    }
+    
+    public int pop() {
+        if (aux.isEmpty()) {
+            while (!stack.isEmpty()) {
+                aux.push(stack.pop());
+            }
+        }
+        return aux.pop();
+    }
+    
+    public int peek() {
+        if (!aux.isEmpty()) {
+            return aux.peek();
+        }
+        return front;
+    }
+    
+    public boolean empty() {
+        return stack.isEmpty() && aux.isEmpty();
+    }
+}
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue obj = new MyQueue();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.peek();
+ * boolean param_4 = obj.empty();
+ */
