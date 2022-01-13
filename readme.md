@@ -16,4 +16,4 @@ Dope thanks bozo
 
 
 
-It looks like LeetHub requires a private repo that each person owns
+It looks like LeetHub requires a private repo and for each person to be an owner of it
